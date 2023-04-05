@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Input Hobbies</title>
+    <style>
+
+        table {
+            margin: 0 auto;
+        }
+        td{
+                text-align: left;
+                float: top;
+        }
+        th{
+            text-align: right;
+            color: blue;
+        }
+        .submit{
+            transform:translate(-50%,-50%);
+        }
+        h1{
+            background-color: red;
+            color:#fff
+        }
+    </style>
+</head>
+<body>
+    <center><h1>SỞ THÍCH CỦA BẠN</h1></center>
+    <form>
+        <fieldset>
+        <table>
+            <tr>
+                <th><label>Họ và tên</label></th>
+                <td colspan="3"><input type="text" name="yourname" size="30"/></td>
+            </tr>
+            <tr>
+                <th><label>Email</label></th>
+                <td colspan="3"><input type="text" name="email" size="20"/></td>
+            </tr>
+            <tr>
+                <th><label>Sở thích</label></th>
+                <td style="color:orange"><input type="checkbox" name="hobby" value="thethao" >Thể thao</td>
+                <td style="color:orange"><input type="checkbox" name="hobby" value="amnhac">Âm nhạc</td>
+                <td style="color:orange"><input type="checkbox" name="hobby" value="docsach">Đọc sách</td>
+            </tr>
+            <tr>
+                <td rowspan="2"></td>
+                <td style="color:orange"><input type="checkbox" name="hobby" value="luotweb">Lướt web</td>
+                <td style="color:orange"><input type="checkbox" name="hobby" value="choigame">Chơi game</td>
+                <td style="color:orange"><input type="checkbox" name="hobby" value="dienanh">Điện ảnh</td>
+            </tr>
+            <tr>
+                <td style="color:orange"><input type="checkbox" name="hobby" value="dulich">Du lịch</td>
+            </tr>
+        </table>
+            <center>
+                <input type="submit" value="Gửi thông tin">
+                <input type="reset" value="Nhập lại">
+            </center>
+        </fieldset>
+    </form>
+</body>
+</html>
