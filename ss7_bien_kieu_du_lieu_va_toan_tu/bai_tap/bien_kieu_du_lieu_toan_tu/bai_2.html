@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BÀI 2</title>
+</head>
+<body>
+<form>
+  <label>Độ C</label>&nbsp<input type="text" id="input_vaule">--><label>Độ F </label><label id="output_value"></label><br/><br/>
+  <input type="button" onclick="change()" value="Chuyển Đổi">
+</form>
+<script>
+    function change(){
+    let f,c;
+    c=document.getElementById('input_vaule').value;
+    f=c*9/5+32;
+    document.getElementById("output_value").innerText=f;
+    }
+</script>
+</body>
+</html>

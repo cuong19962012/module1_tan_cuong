@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BÀI 4</title>
+</head>
+<body>
+<form>
+    <label>Bán kính</label>&nbsp<input type="text" id="input_vaule">--><label>Chu vi </label><label id="output_value"></label><br/><br/>
+    <input type="button" onclick="change()" value="Chuyển Đổi">
+</form>
+<script>
+    function change(){
+        let r,d;
+        r=document.getElementById('input_vaule').value;
+        d=r*2*3.14;
+        document.getElementById("output_value").innerText=d;
+    }
+</script>
+</body>
+</html>

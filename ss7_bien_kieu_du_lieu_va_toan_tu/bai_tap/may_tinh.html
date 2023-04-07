@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MÁY TÍNH</title>
+</head>
+<body>
+<form>
+    <input type="text" id="Number1">&nbsp<input type="text" id="Number2"><br><br>
+    <input type="button" id="Add" value="Addition(+)" onclick="addNumber()">
+    <input type="button" id="Sub" value="Subtraction(-)" onclick="subNumber()">
+    <input type="button" id="Multi" value="Multiplication(x)" onclick="multiNumber()">
+    <input type="button" id="Div" value="(Division(/)" onclick="divNumber()">
+</form>
+<p id="result">Result</p>
+<script>
+    function addNumber() {
+        let result = parseInt(document.getElementById("Number1").value) + parseInt(document.getElementById("Number2").value);
+        document.getElementById("result").innerHTML = result;
+    }
+
+    function subNumber() {
+        let result = document.getElementById("Number1").value - document.getElementById("Number2").value;
+        document.getElementById("result").innerHTML = result;
+    }
+
+    function multiNumber() {
+        result = document.getElementById("Number1").value * document.getElementById("Number2").value;
+        document.getElementById("result").innerHTML = result;
+    }
+
+    function divNumber() {
+        result = document.getElementById("Number1").value / document.getElementById("Number2").value;
+        document.getElementById("result").innerHTML = result;
+    }
+</script>
+</body>
+</html>

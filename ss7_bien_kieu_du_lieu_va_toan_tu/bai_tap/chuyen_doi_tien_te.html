@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>CHUYỂN TIỀN</title>
+    <style>
+        th,td{
+            width: 200px;
+        }
+        td{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<form>
+<table>
+    <tr>
+        <th>Amount</th>
+        <th>FromCurrency</th>
+        <th>ToCurrency</th>
+    </tr>
+    <tr>
+        <td><input type="text" id="amount"/></td>
+        <td>
+            <select id="select1" onchange="convert1()">
+                <option value="usd">USD</option>
+                <option value="vnd">VND</option>
+            </select>
+        </td>
+        <td>
+            <select id="select2" onchange="convert1()">
+                <option value="vnd">VND</option>
+                <option value="usd">USD</option>
+            </select>
+        </td>
+        <td><input type="button" id="convert" onclick="convert1()" value="Convert"></td>
+    </tr>
+</table>
+</form>
+<div id="result"></div>
+<script>
+    function convert1(){
+     let a,r;
+     a=document.getElementById("amount").value;
+     console.log(a);
+     selectelement1=document.getElementById("select1").value;
+     selectelement2=document.getElementById("select2").value;
+     console.log(selectelement1);
+     console.log(selectelement2);
+    if(selectelement1=="usd")
+        if(selectelement2=="usd")
+            r=a;
+        else
+            r=a*234000;
+    else
+        if (selectelement2=="vnd")
+            r=a;
+        else
+            r=a/23400;
+    document.getElementById("result").innerHTML="Result : "+r;
+    }
+</script>
+</body>
+</html>
