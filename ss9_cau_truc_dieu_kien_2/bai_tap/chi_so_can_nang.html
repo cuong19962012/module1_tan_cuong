@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CHỈ SỐ CÂN NẶNG</title>
+</head>
+<body>
+<h1>CHỈ SỐ CÂN NẶNG CƠ THỂ</h1>
+<label>Nhập chiều cao : </label><input type="number" id="height"> (M)<br><br>
+<label>Nhập cân nặng : </label><input type="number" id="weight"> (Kg)<br><br>
+<button type="button" onclick="bmiCheck()">Kiểm tra</button><br><br>
+<script>
+    function bmiCheck(){
+        let myweight = parseInt(document.getElementById("weight").value);
+        let myheight = parseInt(document.getElementById("height").value);
+        let bmi=myweight/(myheight^2);
+        let index;
+        if (bmi < 18)
+            index="Nhẹ cân";
+        else if (bmi < 25.0)
+            index="Bình thường";
+        else if (bmi < 30.0)
+            index="Béo phì";
+        else
+            index="Rất béo rồi giảm cân đi !!!";
+        document.write("Chỉ số BMI là : "+bmi+ "<br/> Bạn : "+ index);
+    }
+</script>
+</body>
+</html>

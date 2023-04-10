@@ -11,10 +11,9 @@
 </form>
 <script>
     function change(){
-        let r,s;
-        r=document.getElementById('input_vaule').value;
-        s=r*r*3.14;
-        document.getElementById("output_value").innerText=s +' m2';
+        let radius=document.getElementById('input_vaule').value;
+        let superficies=radius*radius*3.14;
+        document.getElementById("output_value").innerText=superficies +' m2';
     }
 </script>
 </body>

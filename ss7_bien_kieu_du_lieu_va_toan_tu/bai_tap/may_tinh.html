@@ -14,13 +14,14 @@
 </form>
 <p id="result">Result</p>
 <script>
+    let result
     function addNumber() {
-        let result = parseInt(document.getElementById("Number1").value) + parseInt(document.getElementById("Number2").value);
+        result = parseInt(document.getElementById("Number1").value) + parseInt(document.getElementById("Number2").value);
         document.getElementById("result").innerHTML = result;
     }
 
     function subNumber() {
-        let result = document.getElementById("Number1").value - document.getElementById("Number2").value;
+        result = document.getElementById("Number1").value - document.getElementById("Number2").value;
         document.getElementById("result").innerHTML = result;
     }
 

@@ -4,61 +4,61 @@
     <meta charset="UTF-8">
     <title>CHUYỂN TIỀN</title>
     <style>
-        th,td{
+        th, td {
             width: 200px;
         }
-        td{
+
+        td {
             text-align: center;
         }
     </style>
 </head>
 <body>
 <form>
-<table>
-    <tr>
-        <th>Amount</th>
-        <th>FromCurrency</th>
-        <th>ToCurrency</th>
-    </tr>
-    <tr>
-        <td><input type="text" id="amount"/></td>
-        <td>
-            <select id="select1" onchange="convert1()">
-                <option value="usd">USD</option>
-                <option value="vnd">VND</option>
-            </select>
-        </td>
-        <td>
-            <select id="select2" onchange="convert1()">
-                <option value="vnd">VND</option>
-                <option value="usd">USD</option>
-            </select>
-        </td>
-        <td><input type="button" id="convert" onclick="convert1()" value="Convert"></td>
-    </tr>
-</table>
+    <table>
+        <tr>
+            <th>Amount</th>
+            <th>FromCurrency</th>
+            <th>ToCurrency</th>
+        </tr>
+        <tr>
+            <td><input type="text" id="amount"/></td>
+            <td>
+                <select id="select1" onchange="convert1()">
+                    <option value="usd">USD</option>
+                    <option value="vnd">VND</option>
+                </select>
+            </td>
+            <td>
+                <select id="select2" onchange="convert1()">
+                    <option value="vnd">VND</option>
+                    <option value="usd">USD</option>
+                </select>
+            </td>
+            <td><input type="button" id="convert" onclick="convert1()" value="Convert"></td>
+        </tr>
+    </table>
 </form>
 <div id="result"></div>
 <script>
-    function convert1(){
-     let a,r;
-     a=document.getElementById("amount").value;
-     console.log(a);
-     selectelement1=document.getElementById("select1").value;
-     selectelement2=document.getElementById("select2").value;
-     console.log(selectelement1);
-     console.log(selectelement2);
-    if(selectelement1=="usd")
-        if(selectelement2=="usd")
-            r=a;
+    function convert1() {
+        let _result;
+        let _amount = document.getElementById("amount").value;
+        console.log(_amount);
+        let selectElement1 = document.getElementById("select1").value;
+        let selectElement2 = document.getElementById("select2").value;
+        console.log(selectElement1);
+        console.log(selectElement2);
+        if (selectElement1 == "usd")
+            if (selectElement2 == "usd")
+                _result = _amount;
+            else
+                _result = _amount * 23400;
+        else if (selectElement2 == "vnd")
+            _result = _amount;
         else
-            r=a*234000;
-    else
-        if (selectelement2=="vnd")
-            r=a;
-        else
-            r=a/23400;
-    document.getElementById("result").innerHTML="Result : "+r;
+            _result = _amount / 23400;
+        document.getElementById("result").innerHTML = "Result : " + _result;
     }
 </script>
 </body>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BÀI 6</title>
+</head>
+<body>
+<input type="number" id="turnover"/>Triệu<p id="showplace"></p>
+<button id="caculatebrokenrage" onclick="displayBrokeRage()">Xuất ra</button>
+<script>
+    function displayBrokeRage()
+    {
+        let turnOver = parseInt(document.getElementById("turnover").value);
+        let brokenRage;
+        if (turnOver>300)
+            brokenRage=turnOver/100*5;
+        else if (turnOver>200)
+            brokenRage=turnOver/100*3;
+        else
+            brokenRage=turnOver/100;
+        document.getElementById("showplace").innerHTML="Doanh thu "+turnOver+ " thì hoa hồng là "+brokenRage+" triệu";
+    }
+</script>
+</body>
+</html>

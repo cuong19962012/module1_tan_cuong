@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BÀI 7</title>
+</head>
+<body>
+<script>
+    let timeCall1=parseInt(prompt("Nhập thời gian gọi nội mạng",0));
+    let timeCall2=parseInt(prompt("Nhập thời gian gọi ngoại mạng",0));
+    let timeCall3=parseInt(prompt("Nhập thời gian gọi liên quốc gia",0));
+    let phoneCharges1=timeCall1*500;
+    let phoneCharges2;
+    let phoneCharges3;
+    if(timeCall2>2)
+        phoneCharges2=timeCall2*800;
+    else
+        phoneCharges2=timeCall2*500;
+
+    if (timeCall3>5)
+        phoneCharges3=timeCall3*1000;
+    else
+        phoneCharges3=timeCall3*1500;
+    let total=phoneCharges1+phoneCharges2+phoneCharges3;
+    alert(total+ "Đồng");
+</script>
+</body>
+</html>

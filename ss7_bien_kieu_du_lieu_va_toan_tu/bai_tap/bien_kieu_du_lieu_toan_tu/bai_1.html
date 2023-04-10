@@ -6,15 +6,14 @@
 </head>
 <body>
     <script>
-        inputphy=prompt('Nhập điểm vật lí',"0");
-        inputbio=prompt('Nhập điểm sinh',"0");
-        inputchemis=prompt('Nhập điểm hóa',"0");
-        let physcis,biology,chemistry,avr;
-        physcis = parseInt(inputphy);
-        biology = parseInt(inputbio);
-        chemistry = parseInt(inputchemis);
-        avr=(physcis+biology+chemistry)/3;
-        alert('Điểm trung bình : '+avr);
+        let inputPhy=prompt('Nhập điểm vật lí',"0");
+        let inputBio=prompt('Nhập điểm sinh',"0");
+        let inputChemis=prompt('Nhập điểm hóa',"0");
+        let physcis = parseInt(inputPhy);
+        let biology = parseInt(inputBio);
+        let chemistry = parseInt(inputChemis);
+        let average=(physcis+biology+chemistry)/3;
+        alert('Điểm trung bình : '+average);
     </script>
 </body>
 </html>

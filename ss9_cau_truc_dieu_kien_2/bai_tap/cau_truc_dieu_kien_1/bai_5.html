@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BÀI 5</title>
+</head>
+<body>
+<script>
+    let exam = +prompt("Điểm kiểm tra: ", 0);
+    let midExam = +prompt("Điểm kiểm tra giữa kỳ: ", 0);
+    let finalExam = +prompt("Điểm kiểm tra cuối kỳ: ", 0);
+    let average = (exam+(midExam*2)+(finalExam*3))/6;
+    if (average >= 8)
+        alert("Giỏi");
+    else if (average >= 6)
+        alert("Khá");
+    else if (average >= 4)
+        alert("Trung bình");
+    else
+        alert("Yếu");
+</script>
+</body>
+</html>

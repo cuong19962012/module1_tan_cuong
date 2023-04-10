@@ -11,10 +11,9 @@
 </form>
 <script>
     function change(){
-    let f,c;
-    c=document.getElementById('input_vaule').value;
-    f=c*9/5+32;
-    document.getElementById("output_value").innerText=f;
+    let celsius=parseInt(document.getElementById('input_vaule').value);
+    let fahrenheit=celsius*9/5+32;
+    document.getElementById("output_value").innerText=fahrenheit;
     }
 </script>
 </body>
