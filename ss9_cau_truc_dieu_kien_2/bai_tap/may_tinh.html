@@ -6,10 +6,11 @@
     <style>
         tr td {
             /*border: 5px solid black;*/
-            padding: 5px 5px 5px 5px;
+            padding: 2px 2px 2px 2px;
         }
 
         table {
+            border: 1px;
             /*border: black 5px solid;*/
             border-collapse: collapse;
         }
@@ -17,47 +18,78 @@
 </head>
 <body>
 <form>
-    <div id="showplace"></div>
+    <input type="text" value="" id="showplace"/>
     <table>
         <tr>
-            <td><button type="button" id="1" onclick="show()" value="1">1</button></td>
-            <td><button type="button" id="2">2</button></td>
-            <td><button type="button" id="3">3</button></td>
-            <td><button type="button" id="plus">+</button></td>
+            <td>
+                <button type="button" onclick="show(1)">1</button>
+            </td>
+            <td>
+                <button type="button" onclick="show(2)">2</button>
+            </td>
+            <td>
+                <button type="button" onclick="show(3)">3</button>
+            </td>
+            <td>
+                <button type="button" onclick="show('+')">+</button>
+            </td>
         </tr>
         <tr>
-            <td><button type="button" id="4">4</button></td>
-            <td><button type="button" id="5">5</button></td>
-            <td><button type="button" id="6">6</button></td>
-            <td><button type="button" id="minus">-</button></td>
+            <td>
+                <button type="button" onclick="show(4)">4</button>
+            </td>
+            <td>
+                <button type="button" onclick="show(5)">5</button>
+            </td>
+            <td>
+                <button type="button" onclick="show(6)">6</button>
+            </td>
+            <td>
+                <button type="button" onclick="show('-')">-</button>
+            </td>
         </tr>
         <tr>
-            <td><button type="button" id="7">7</button></td>
-            <td><button type="button" id="8">8</button></td>
-            <td><button type="button" id="9">9</button></td>
-            <td><button type="button" id="multi">x</button></td>
+            <td>
+                <button type="button" onclick="show(7)">7</button>
+            </td>
+            <td>
+                <button type="button" onclick="show(8)">8</button>
+            </td>
+            <td>
+                <button type="button" onclick="show(9)">9</button>
+            </td>
+            <td>
+                <button type="button" onclick="show('*')">x</button>
+            </td>
         </tr>
         <tr>
-            <td><button type="button" id="reset">C</button></td>
-            <td><button type="button" id="0" onclick="show()">0</button></td>
-            <td><button type="button" id="result">=</button></td>
-            <td><button type="button" id="divi">/</button></td>
+            <td>
+                <button type="button" onclick="reset()">C</button>
+            </td>
+            <td>
+                <button type="button" onclick="show(0)">0</button>
+            </td>
+            <td>
+                <button type="button" onclick="equals()">=</button>
+            </td>
+            <td>
+                <button type="button" onclick="show('/')">/</button>
+            </td>
         </tr>
     </table>
 </form>
 <script>
-
-    function show()
-    {
-        let backUp=document.getElementById("showplace").value;
-        let buttonValue=document.getElementById('1').value;
-        document.getElementById("showplace").innerHTML="<input type='text' id='showPlace' value='"+backUp+buttonValue+"'/>";
+    function show(value) {
+        document.getElementById("showplace").value+=value;
     }
-    function firstFunction()
+    function reset()
     {
-        document.getElementById("showplace").innerHTML="<input type='text' id='showPlace' value=''/>"
+        document.getElementById("showplace").value="";
     }
-    window.onload(firstFunction());
+    function equals(){
+        let string =document.getElementById("showplace").value;
+        document.getElementById("showplace").value=eval(string);
+    }
 </script>
 </body>
 </html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BÀI 12</title>
+</head>
+<body>
+<script>
+    let borrow = parseInt(prompt("Bạn muốn mượn bao nhiêu triệu với lãi suất kép là 9% và phải trả trong vòng 6 tháng", 0));
+    if (borrow<=0)
+        alert("Nên mượn nhiều hơn");
+    else {
+        let result = borrow * Math.pow((1 + 0.09), 6);
+        console.log(result);
+        alert("Số tiền phải trả trong vòng 6 tháng là: " + result+ " Triệu");
+    }
+
+</script>
+</body>
+</html>
