@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BÀI 5</title>
+</head>
+<body>
+<script>
+    let total = 0;
+    for (let i = 0, j = 1, count = 0; count < 20; count++) {
+        fibonacci = i + j;
+        total = total + fibonacci;
+        i = j;
+        j = fibonacci;
+    }
+    alert("Tổng 20 số Fibonacci đầu tiên là :" + total);
+</script>
+</body>
+</html>
