@@ -5,9 +5,25 @@
     <title>BÀI 8</title>
 </head>
 <body>
-<button type="button" id="start" onclick="">Bắt đầu</button>
+<button type="button" id="start">Bắt đầu</button>
 <script>
+    let start = document.getElementById("start");
+    start.addEventListener("click", guessNumber);
 
+    function guessnumber() {
+        let count=0;
+        let number = +prompt("Nhập khoảng bao nhiêu đơn vị để có thể đoán số", 0);
+        let randomNumber = Math.floor(Math.random() * number);
+        let inputGuess = +prompt("Mời đoán số", 0);
+        while (inputGuess !== randomNumber) {
+            if (count>3){
+                alert("kết thúc lượt chơi");
+             break;
+            }
+            inputGuess = +prompt("Mời đoán số lại", 0);
+            count++;
+        }
+    }
 </script>
 </body>
 </html>

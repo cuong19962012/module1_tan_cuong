@@ -10,15 +10,15 @@
     let number2 = parseInt(prompt("Nhập số b", 0));
     let number3 = parseInt(prompt("Nhập số c", 0));
     let delta = number2 * number2 - 4 * number1 * number3;
-    if (delta < 0)
+    if (delta < 0) {
         alert("Phương trình vô nghiệm");
-    else if (delta == 0) {
+    } else if (delta == 0) {
         let x = -number2 / (2 * number1);
         alert("Phương trình có 2 nghiệm x1 = x2 = " + x);
     } else {
-        let x1=(-number2+Math.sqrt(delta))/(2*number1);
-        let x2=(number2+Math.sqrt(delta))/(2*number1);
-        alert("Phương trình có 2 nghiệm x1= "+x1+", x2= "+x2);
+        let x1 = (-number2 + Math.sqrt(delta)) / (2 * number1);
+        let x2 = (number2 + Math.sqrt(delta)) / (2 * number1);
+        alert("Phương trình có 2 nghiệm x1= " + x1 + ", x2= " + x2);
     }
 </script>
 </body>

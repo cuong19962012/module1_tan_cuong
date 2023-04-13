@@ -6,25 +6,26 @@
 </head>
 <body>
 <script>
-    let salary=prompt("Thu nhập hằng tháng (Triệu) ",0);
+    let salary = prompt("Thu nhập hằng tháng (Triệu) ", 0);
     let result;
-    if (salary>80)
-        result=salary*0.35-9.85;
-    else if(salary>52)
-        result=salary*0.3-5.85;
-    else if (salary>32)
-        result=salary*0.25-3.25;
-    else if (salary>18)
-        result=salary*0.2-1.65;
-    else if (salary>10)
-        result=salary*0.15-0.75;
-    else if (salary>5)
-        result=salary*0.1-0.25;
-    else if(salary>0)
-        result=salary*0.05;
-    else
+    if (salary > 80) {
+        result = salary * 0.35 - 9.85;
+    } else if (salary > 52) {
+        result = salary * 0.3 - 5.85;
+    } else if (salary > 32) {
+        result = salary * 0.25 - 3.25;
+    } else if (salary > 18) {
+        result = salary * 0.2 - 1.65;
+    } else if (salary > 10) {
+        result = salary * 0.15 - 0.75;
+    } else if (salary > 5) {
+        result = salary * 0.1 - 0.25;
+    } else if (salary > 0) {
+        result = salary * 0.05;
+    } else {
         alert("Không có thu nhập âm");
-    alert("Thuế thu nhập của bạn là "+result+" đồng");
+    }
+    alert("Thuế thu nhập của bạn là " + result + " đồng");
 </script>
 </body>
 </html>

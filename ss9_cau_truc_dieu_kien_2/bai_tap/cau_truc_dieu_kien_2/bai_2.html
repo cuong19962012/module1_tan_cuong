@@ -6,14 +6,15 @@
 </head>
 <body>
 <form>
-    <label>Metter</label>&nbsp<input type="text" id="input_vaule">--><label>Foot</label><label id="output_value"></label><br/><br/>
+    <label>Metter</label>&nbsp<input type="text" id="input_vaule">--><label>Foot</label><label
+        id="output_value"></label><br/><br/>
     <input type="button" onclick="change()" value="Chuyển Đổi">
 </form>
 <script>
     function change() {
         let metter = parseInt(document.getElementById('input_vaule').value);
-        let foot =metter*3.2808;
-        document.getElementById("output_value").innerText = " " +foot+" ft";
+        let foot = metter * 3.2808;
+        document.getElementById("output_value").innerText = " " + foot + " ft";
     }
 </script>
 </body>

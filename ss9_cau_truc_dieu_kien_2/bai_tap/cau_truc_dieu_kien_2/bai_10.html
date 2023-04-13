@@ -6,23 +6,24 @@
 </head>
 <body>
 <script>
-    let amount=prompt("Số chữ điện đã sử dụng",0);
+    let amount = prompt("Số chữ điện đã sử dụng", 0);
     let result;
-    if (amount>401)
-        result=amount*2927;
-    else if(amount>301)
-        result=amount*2834;
-    else if (amount>201)
-        result=amount*2536;
-    else if (amount>101)
-        result=amount*2014;
-    else if (amount>51)
-        result=amount*1600;
-    else if (amount>0)
-        result=amount*1549;
-    else
+    if (amount > 401) {
+        result = amount * 2927;
+    } else if (amount > 301) {
+        result = amount * 2834;
+    } else if (amount > 201) {
+        result = amount * 2536;
+    } else if (amount > 101) {
+        result = amount * 2014;
+    } else if (amount > 51) {
+        result = amount * 1600;
+    } else if (amount > 0) {
+        result = amount * 1549;
+    } else {
         alert("Nhập lại đi!!! sai số rồi");
-    alert("Tiền điện tháng này của bạn là "+result+" đồng");
+    }
+    alert("Tiền điện tháng này của bạn là " + result + " đồng");
 </script>
 </body>
 </html>
