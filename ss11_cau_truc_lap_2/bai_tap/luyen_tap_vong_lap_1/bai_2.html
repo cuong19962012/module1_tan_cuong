@@ -8,10 +8,11 @@
 <script>
     let temperrature = prompt("Nhập nhiệt độ vào :", 0);
     while (100 < temperrature || temperrature < 20) {
-        if (temperrature > 100)
+        if (temperrature > 100) {
             temperrature = prompt("Giảm nhiệt độ xuống :", 0);
-        else
+        } else {
             temperrature = prompt("Tăng nhiệt độ lên :", 0);
+        }
     }
     alert("Nhiệt độ là: " + temperrature);
 </script>

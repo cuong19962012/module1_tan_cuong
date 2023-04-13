@@ -8,19 +8,26 @@
 <button type="button" id="start">Bắt đầu</button>
 <script>
     let start = document.getElementById("start");
-    start.addEventListener("click", guessNumber);
+    start.addEventListener("click", guessnumber);
 
     function guessnumber() {
-        let count=0;
-        let number = +prompt("Nhập khoảng bao nhiêu đơn vị để có thể đoán số", 0);
-        let randomNumber = Math.floor(Math.random() * number);
-        let inputGuess = +prompt("Mời đoán số", 0);
+        let count = 0;
+        let number = +prompt("Nhập khoảng bao nhiêu đơn vị để có thể đoán số");
+        let randomNumber = Math.floor(Math.random() * (number + 1));
+        let inputGuess = +prompt("Mời đoán số");
         while (inputGuess !== randomNumber) {
-            if (count>3){
+            if (count > 3) {
                 alert("kết thúc lượt chơi");
-             break;
+                break;
             }
-            inputGuess = +prompt("Mời đoán số lại", 0);
+            if (inputGuess > randomNumber) {
+                inputGuess = prompt("Lớn hơn số ngẫu nhiên !");
+            } else if (inputGuess < randomNumber) {
+                inputGuess = prompt("Nhỏ hơn số ngẫu nhiên !");
+            } else {
+                alert("Chúc mừng bạn đã đoán đúng");
+                break;
+            }
             count++;
         }
     }
