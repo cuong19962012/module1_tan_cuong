@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let array = [];
+    let flag=false;
+    for (let i = 0; i < 10; i++) {
+        array[i] = Math.floor(Math.random() * 20);
+    }
+    let numberV=+prompt("Nhập số V: ","0");
+    for (let j of array)
+    {
+        if (j==numberV)
+        {
+            alert("V in array");
+            flag=true;
+            break;
+        }
+    }
+    if (flag==false)
+    {
+        alert("V not in array");
+    }
+    document.write("Mảng : "+array);
+</script>
+</body>
+</html>

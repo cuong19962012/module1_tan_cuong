@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let array = [];
+    let number = +prompt("Muốn khởi tạo bao nhiêu số trong mảng ", 1);
+    for (let i = 0; i < number; i++) {
+        array[i] = parseInt(prompt("Nhập Phần tử " + i + 1, "1"));
+    }
+    document.write("Trước: " + array.join(" ,"));
+    array.reverse();
+    document.write(" <br>Sau: " + array.join(" ,"));
+</script>
+</body>
+</html>

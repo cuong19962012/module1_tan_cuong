@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let array = [];
+    for (let i = 0; i < 10; i++) {
+        array[i] = Math.floor(Math.random() * 100) + 1;
+    }
+    let max = array[0];
+    for (let j = 0; j < array.length; j++) {
+        if (max < array[j]) {
+            max = array[j];
+        }
+    }
+    document.write("Max is :" + max + " Index " + array.indexOf(max));
+</script>
+</body>
+</html>

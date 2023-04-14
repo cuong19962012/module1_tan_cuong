@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" id="inputValue"><br>
+<input type="button" value="Dịch" id="translate">
+<p id="result"></p>
+<script>
+    let translate = document.getElementById("translate");
+    translate.addEventListener("click", translateDictionary);
+
+    function translateDictionary() {
+        let dictionary1 = ["eyes", "body", "head", "hand", "leg"];
+        let dictionary2 = ["mắt", "thân", "đầu", "tay", "chân"];
+        let word = document.getElementById("inputValue").value;
+        for (let i = 0; i < dictionary1.length; i++) {
+            if (dictionary1[i] == word) {
+                document.getElementById("result").innerHTML = dictionary2[i];
+                break;
+            }
+            if (i == dictionary1.length - 1) {
+                alert("Không tìm thấy");
+            }
+        }
+
+    }
+</script>
+</body>
+</html>
