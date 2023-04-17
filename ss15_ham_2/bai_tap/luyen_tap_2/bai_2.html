@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function caculateArea(radius) {
+        return radius * radius * 3.14;
+    }
+
+    function caculateCircumference(radius) {
+        return 2 * radius * 3.14;
+    }
+
+    let inputRadius = +prompt("Nhập vào bán kính đường tròn", "0");
+    let result1 = caculateArea(inputRadius);
+    let result2 = caculateCircumference(inputRadius);
+    document.write("Diện tích là: "+result1+"<br>Đường kính là: "+result2);
+</script>
+</body>
+</html>

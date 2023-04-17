@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let array1 = ["Polaris", "Aldebaran", "Deneb", "Vega", "Altair", "Dubhe", "Regulus"];
+    let array2 = ["Ursa Minor", "Tarurus", "Cygnus", "Lyra", "Aquila", "Ursa Major", "Leo"];
+
+    function search(starName) {
+        for (let i in array1) {
+            if (array1[i] = starName) {
+                return array2[i];
+            }
+        }
+        return "Không có tên hành tinh trong danh sách";
+    }
+
+    let star = prompt("Nhập tên hành tinh để hiện ra chòm sao tương ứng", "0");
+    let result = search(star);
+    document.write(result);
+</script>
+</body>
+</html>

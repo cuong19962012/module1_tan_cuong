@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let array1 = [];
+    let array2 = [];
+    let array3 = new Array(20);
+    for (let i = 0; i < 10; i++) {
+        array1[i] = parseInt(prompt("Nhập Phần tử " + (i + 1) + " của mảng a", "1"));
+    }
+    for (let j = 0; j < 10; j++) {
+        array2[j] = parseInt(prompt("Nhập Phần tử " + (j + 1) + " của mảng b", "1"));
+    }
+    array3 = array1.concat(array2);
+    document.write("Mảng a: " + array1 + "<br>Mảng b: " + array2);
+    document.write("<br>Nối 2 mảng thành mảng C: " + array3);
+</script>
+</body>
+</html>

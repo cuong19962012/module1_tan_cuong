@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function flag() {
+        let number;
+        do {
+            number = +prompt("Nhập vào 1 số bất kì");
+        } while (Number.isNaN(number));
+        if (number > 0)
+            return true;
+        else if (number <= 0)
+            return false;
+    }
+    if (flag() === true)
+        alert("Là số dương");
+    else
+        alert("Không phải là số dương");
+</script>
+</body>
+</html>

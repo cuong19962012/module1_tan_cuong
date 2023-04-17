@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let element = +prompt("Nhập vào số phần tử trong mảng", "1");
+    let array = []
+    for (let i = 0; i < element; i++) {
+        do {
+            array[i] = prompt("Nhập phần tử thứ " + (i + 1)+" của mảng ", "0");
+        } while (array[i].length > 1);
+    }
+    document.write("Mảng trước thay thế: " + array);
+    for (let j in array) {
+        if (array[j] == "-") {
+            array[j] = "_";
+        }
+    }
+    document.write("Mảng sau thay thế: " + array);
+</script>
+</body>
+</html>

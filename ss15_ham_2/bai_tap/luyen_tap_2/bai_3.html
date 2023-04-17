@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function caculateFactorial(number) {
+        let factorial = 1;
+        for (let i = 1; i <= number; i++) {
+            factorial *= i;
+        }
+        return factorial;
+    }
+
+    let inputNumber = +prompt("Nhập vào 1 số bất kì", "0");
+    let result = caculateFactorial(inputNumber);
+    document.write("Giai thừa: " + result);
+</script>
+</body>
+</html>

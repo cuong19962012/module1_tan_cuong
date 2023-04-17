@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function checkCharacter(characterArray, character) {
+        let count = 0;
+        for (let i of characterArray) {
+            if (i == character) {
+                count++;
+            }
+        }
+        if (count > 0) {
+            alert("Kí tự có xuất hiện trong mảng và xuất hiện " + count + " lần");
+        }
+        document.write(characterArray + "<br>" + character);
+    }
+
+    let characterArray = [];
+    for (let j = 0; j < 5; j++) {
+        do {
+            characterArray[j] = prompt("Nhập vào kí tự thứ " + (j + 1));
+        } while (characterArray[j].length > 2);
+    }
+    let inputCharacter = prompt("Nhập vào kí tự để kiểm tra ", "0");
+    checkCharacter(characterArray, inputCharacter);
+</script>
+</body>
+</html>
