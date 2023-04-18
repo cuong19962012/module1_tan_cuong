@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        tr:nth-child(even) {
+            background-color: whitesmoke;
+        }
+
+        tr td {
+            border: none;
+        }
+
+        td {
+            height: 50px;
+            width: 500px
+        }
+    </style>
+</head>
+<body>
+<div style="padding: 50px 50px 50px 50px;background-color: #5f6062; float: top">
+    <h1>Add New Product</h1>
+    <input type="text" id="addPlace">&nbsp&nbsp
+    <button id="btn-add" type="button" onclick="addProduct()">ADD</button>
+    <button style="display: none" id="btn-edit" type="button" onclick="update()">Save</button>
+</div>
+<div id="list" style="float: bottom; margin-top: 50px">
+</div>
+<script>
+    let product = ["SonyXperia", "Samsung Galaxy", "Iphone X"];
+    let editIndex = -1;
+
+    function update() {
+        let productName = document.getElementById("addPlace").value;
+        product[editIndex] = productName;
+        document.getElementById('btn-add').style.display = 'inline';
+        document.getElementById('btn-edit').style.display = 'none';
+        display()
+    }
+
+    function editProduct(index) {
+        editIndex = index;
+        document.getElementById('addPlace').value = product[index];
+        document.getElementById('btn-add').style.display = 'none';
+        document.getElementById('btn-edit').style.display = 'inline';
+
+    }
+
+    function addProduct() {
+        let productName = document.getElementById("addPlace").value;
+        product.push(productName);
+        display();
+    }
+
+
+    function deleteProduct(deteleIndex) {
+        product.splice(deteleIndex, 1);
+        display();
+    }
+
+
+    function display() {
+        let result = "<h1>Display All Product</h1>";
+        result += "<table style='border-collapse: collapse'>";
+        for (let i = 0; i < product.length; i++) {
+            result += "<tr>";
+            result += "<td>" + product[i] + "</td>";
+            result += "<td style='text-align: center'><button type='button' onclick='editProduct(" + i + ")'>Edit</button></td>";
+            result += "<td style='text-align: center'><button type='button' onclick='deleteProduct(" + i + ")'>Delete</button></td>";
+            result += "</tr>";
+        }
+        result += "</table>";
+        document.getElementById("list").innerHTML = result;
+    }
+
+    window.onload(display());
+</script>
+</body>
+</html>
