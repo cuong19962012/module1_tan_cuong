@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let array = [];
+    for (let i = 0; i < 5; i++) {
+        array[i] = +prompt("Nhập số để kiểm tra", "0");
+    }
+
+    function check() {
+        for (let j = 1; j < array.length; j++) {
+            if (array[j] % j !== 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    if (check() == true) {
+        alert("OK");
+    } else {
+        alert("NO");
+    }
+</script>
+</body>
+</html>

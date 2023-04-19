@@ -29,6 +29,7 @@
 <script>
     let product = ["SonyXperia", "Samsung Galaxy", "Iphone X"];
     let editShow = false;
+    let returnEditIndex = -1;
 
     function AddProduct() {
         let productName = document.getElementById("addPlace").value;
@@ -36,15 +37,15 @@
         display();
     }
 
-    function editFormShow(i) {
+    function editFormShow(editIndex) {
         editShow = true;
+        returnEditIndex = editIndex;
         display();
     }
 
     function editComfirm(editIndex) {
-        let editResult;
-        editResult = document.getElementById("edi").id;
-        alert(editResult);
+        product[editIndex] = document.getElementById("editPlace").value;
+        display();
     }
 
     function deleteProduct(deteleIndex) {
@@ -53,16 +54,16 @@
     }
 
     function display() {
-        let result = "<h1>Display All Product</h1>";
+        let result = "<h1>Display All Product</h1> ";
         result += "<table style='border-collapse: collapse'>";
         for (let i = 0; i < product.length; i++) {
             result += "<tr>";
             result += "<td>" + product[i] + "</td>";
-            if (editShow === false) {
-                result += "<td style='text-align: center'><button type='button' onclick='editFormShow()'>Edit</button></td>";
-            } else {
-                result += "<td style='text-align: center'><button type='button' onclick='editFormShow()'>Edit</button><input type='text' id='editPlace'><button type='button' onclick='editComfirm(" + i + ")'>Confirm</button></td>";
+            if (editShow === true && returnEditIndex === i) {
+                result += "<td style='text-align: center'><input type='text' id='editPlace'><button type='button' onclick='editComfirm(" + i + ")'>Confirm</button></td>";
                 editShow = false;
+            } else {
+                result += "<td style='text-align: center'><button type='button' onclick='editFormShow(" + i + ")'>Edit</button></td>";
             }
             result += "<td style='text-align: center'><button type='button' onclick='deleteProduct(" + i + ")'>Delete</button></td>";
             result += "</tr>";
