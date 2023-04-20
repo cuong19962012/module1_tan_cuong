@@ -10,23 +10,31 @@
     let Rectangle = function (length, width) {
         this.length = length;
         this.width = width;
+        this.setLength = function (value) {
+            length = value;
+        }
+        this.setWidth = function (value) {
+            width = value;
+        }
         this.getArea = function () {
             return length * width;
-        };
+        }
         this.getPerimeter = function () {
             return (length + width) * 2;
-        };
-        this.drawRectangle = function () {
+        }
+        this.drawRectangle = function (x, y) {
             let ctx = document.getElementById("myCanvas").getContext("2d");
-            ctx.fillStyle = "#000000";
-            ctx.fillRect(0, 0, length * 5, width * 5);
+            ctx.fillStyle = "#ff0000";
+            ctx.fillRect(x, y, length, width);
         }
     }
     let rectangle = new Rectangle(100, 50);
-    rectangle.drawRectangle();
-    document.write("<br>Chu vi " + rectangle.getPerimeter() + " Diện tích " + rectangle.getArea()+"<br>");
-    let rectangle2 = new Rectangle(200, 100);
-    document.write("Chu vi " + rectangle2.getPerimeter() + " Diện tích " + rectangle2.getArea());
+    rectangle.drawRectangle(0, 0);
+    document.write("<br>Chu vi " + rectangle.getPerimeter() + " Diện tích " + rectangle.getArea() + "<br>");
+    rectangle.setLength(200);
+    rectangle.setWidth(100);
+    rectangle.drawRectangle(100, 100);
+    document.write("<br>Chu vi " + rectangle.getPerimeter() + " Diện tích " + rectangle.getArea() + "<br>");
 </script>
 </body>
 </html>

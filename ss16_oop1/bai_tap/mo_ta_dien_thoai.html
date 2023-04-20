@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class Phone {
+        constructor(batteryStatus, phoneStatus, newBox, inbox, sendBox) {
+            this.batteryStatus = batteryStatus;
+            this.phoneStatus = phoneStatus;
+            this.newBox = newBox;
+            this.inbox = inbox;
+            this.sendBox = sendBox;
+            this.checkBatteryAndSource = function () {
+                if (this.batteryStatus == 0 || this.phoneStatus == false) {
+                    return alert("đã hết pin cần sạc hoặc là điện thoại đang tắt kiểm tra lại");
+                }
+            }
+        }
+
+        checkPhone() {
+            this.checkBatteryAndSource();
+            if (this.phoneStatus && this.batteryStatus > 0) {
+                alert("Điện thoại đang bật");
+            } else {
+                alert("Điện thoại đang tắt");
+            }
+            this.batteryStatus--;
+        }
+
+        togglePhone(flag) {
+            this.checkBatteryAndSource();
+            if (flag) {
+                if (!this.phoneStatus) {
+                    this.phoneStatus = flag;
+                } else {
+                    alert("Điện thoại hiện đang bật không cần bật lại");
+                }
+            } else {
+                if (!this.phoneStatus) {
+                    alert("Điện thoại đang tắt không cần tắt lại");
+                } else {
+                    this.phoneStatus = flag;
+                }
+            }
+            this.batteryStatus--;
+        }
+
+        chargePhone() {
+            this.checkBatteryAndSource();
+            this.batteryStatus = 100;
+        }
+
+        getSendMessage() {
+            this.checkBatteryAndSource();
+            alert(this.sendBox);
+            this.batteryStatus--;
+        }
+
+        getReceiveMessage() {
+            this.checkBatteryAndSource();
+            alert(this.inbox);
+            this.batteryStatus--;
+        }
+
+        typeMessage(message) {
+            this.checkBatteryAndSource();
+            this.newBox = message;
+            this.batteryStatus--;
+        }
+
+        sendMessage(phoneName) {
+            this.checkBatteryAndSource();
+            phoneName.inbox = this.newBox;
+            this.batteryStatus--;
+        }
+
+        receiveMessage(phoneName) {
+            this.checkBatteryAndSource();
+            this.inbox = phoneName.newBox;
+            this.batteryStatus--;
+        }
+    }
+
+    let nokia = new Phone(3, true, "", "", "");
+    let iphone = new Phone(3, true, "", "", "");
+    nokia.typeMessage("alo alo");
+    nokia.sendMessage(iphone);
+    iphone.getReceiveMessage();
+    nokia.checkPhone();
+    nokia.typeMessage("alo lần 2");
+</script>
+</body>
+</html>

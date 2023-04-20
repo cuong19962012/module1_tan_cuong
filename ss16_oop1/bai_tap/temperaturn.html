@@ -5,10 +5,18 @@
     <title>Title</title>
 </head>
 <body>
-    <script>
-        let string="1/2";
-        string=parseInt(string);
-        alert(string);
-    </script>
+<script>
+    let Temperature = function (celsius) {
+        this.celsius = celsius;
+        this.changeFahrenheit = function () {
+            return 9 / 5 * celsius + 32;
+        };
+        this.changeKelvin = function () {
+            return celsius + 275.15;
+        };
+    };
+    let temperature = new Temperature(25);
+    document.write("Với 25 độ C thì độ F: " + temperature.changeFahrenheit() + " Độ K: " + temperature.changeKelvin());
+</script>
 </body>
 </html>

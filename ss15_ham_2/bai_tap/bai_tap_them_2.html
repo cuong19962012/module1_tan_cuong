@@ -6,41 +6,32 @@
 </head>
 <body>
 <script>
-    // let a =+prompt("nhâpa")
-    // let b =+prompt("nhâp b")
-    // let ucc =1;
-    // if (a>b){
-    //     for (let i = 1; i <=b ; i++) {
-    //         if (a%i==0&&b%i==0){
-    //             ucc =i;
-    //         }
-    //     }
-    // }else {
-    //     for (let i = 1; i <=a ; i++) {
-    //         if (a%i==0&&b%i==0){
-    //             ucc =i;
-    //         }
-    //     }
-    // }
-    // alert(ucc);
-    // function find(string) {
-    //     let array = string.split("");
-    //     let array.indexOf("/");
-    //     if(array.indexOf("/"))
-    //     for (let i = 0; i < array.length; i++) {
-    //         if(!isNaN(array[i]))
-    //         {
-    //             if(array[i]!=="/")
-    //             {
-    //                 alert("Không phải là phân số");
-    //             }
-    //         }
-    //     }
-    //
-    // }
-    //
-    // let string = prompt("Nhập vào 1 chuỗi để kiểm tra");
-    // find(string);
+    function find(string) {
+        let array = string.split("/");
+        let uocChung = 1;
+        for (let i = 0; i < array.length; i++) {
+            if (array.length > 2 || array[i] === 0 || isNaN(array[i]) === true) {
+                return alert("Không phải là phân số");
+            }
+        }
+        if (array[0] < array[1]) {
+            for (let j = 2; j < array[0]; j++) {
+                if (array[0] % j === 0 && array[1] % j === 0) {
+                    uocChung = j;
+                }
+            }
+        } else {
+            for (let j = 2; j < array[1]; j++) {
+                if (array[0] % j === 0 && array[1] % j === 0) {
+                    uocChung = j;
+                }
+            }
+        }
+        return alert(array[0] / uocChung + "/" + array[1] / uocChung);
+    }
+
+    let string = prompt("Nhập vào 1 chuỗi để kiểm tra");
+    find(string);
 </script>
 </body>
 </html>
