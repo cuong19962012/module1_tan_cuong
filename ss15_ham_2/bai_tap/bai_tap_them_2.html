@@ -10,7 +10,7 @@
         let array = string.split("/");
         let uocChung = 1;
         for (let i = 0; i < array.length; i++) {
-            if (array.length > 2 || array[i] === 0 || isNaN(array[i]) === true) {
+            if (array.length != 2 || array[i] !== 0 || isNaN(array[i]) == true) {
                 return alert("Không phải là phân số");
             }
         }

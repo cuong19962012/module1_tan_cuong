@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class Apple {
+        constructor() {
+            this.weight = 10;
+        }
+
+        decreaseWeight = function () {
+            this.weight--;
+        };
+        getWeight = function () {
+            return this.weight;
+        };
+        isEmpty = function () {
+            if (this.weight === 0) {
+                return document.write("Đã ăn hết táo");
+            }
+        };
+
+    }
+
+    class Human {
+        constructor(name, gender, weight) {
+            this.name = name;
+            this.gender = gender;
+            this.weight = weight;
+        }
+
+        say = function (string) {
+            return console.log(string);
+        };
+        isMale = function () {
+            if (this.gender === "male") {
+                return document.write("Giới tính Nam");
+            } else {
+                return document.write("Giới tính nữ");
+            }
+        };
+        setGender = function (gender) {
+            if (gender === "male" || gender === "female") {
+                return;
+            }
+            this.gender = gender;
+        };
+        checkApple = function (apple) {
+            if (apple.getWeight() === 0) {
+                return document.write("Táo đã ăn hết");
+            } else {
+                return document.write(`táo vẫn còn ${apple.getWeight()} đơn vị`);
+            }
+        };
+        eat = function (apple) {
+            if (apple.weight == 0) {
+                return document.write("<br>Táo đã ăn hết");
+            }
+            apple.decreaseWeight();
+            this.weight++;
+        };
+        getName = function () {
+            return this.name;
+        };
+        setName = function (name) {
+            this.name = name;
+        };
+        getWeight = function () {
+            return this.weight;
+        };
+        setWeight = function (weight) {
+            this.weight = weight;
+        };
+        getInfo = function () {
+            return document.write(`Tên ${this.name} giới tính ${this.gender} cân nặng ${this.weight}`);
+        };
+        call = function (human) {
+            return human.getInfo();
+        };
+    }
+
+    let apple1 = new Apple();
+    let apple2 = new Apple();
+    let human1 = new Human("Eva", "female", 55);
+    let human2 = new Human("Adam", "male", 70);
+    human1.say("I'm Eva");
+    human2.say("I'm Adam");
+    human1.eat(apple1);
+    document.write("cân nặng của Eva" + human1.getWeight());
+    human2.eat(apple2);
+    document.write("<br>cân nặng của Adam" + human2.getWeight() + "<br>");
+    human1.checkApple(apple1);
+    document.write("<br>");
+    human2.checkApple(apple2);
+    document.write("<br>");
+    human1.call(human2);
+    document.write("<br>");
+    human2.call(human1);
+    apple1.weight = 0;
+    human1.eat(apple1);
+    document.write("<br>cân nặng eva " + human1.getWeight());
+</script>
+</body>
+</html>
