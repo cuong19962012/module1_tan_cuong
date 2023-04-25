@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let array1 = [];
+    let element = 0;
+    let array2 = []
+    array1Element = +prompt("Nhập số phần tử của mảng", "0");
+    for (let i = 0; i < array1Element; i++) {
+        array1[i] = +prompt("Phần tử " + (i + 1));
+    }
+
+    for (let i = 0; i < array1.length; i++) {
+        for (let j = i; j >= 0; j--) {
+            element = element + array1[j];
+        }
+        array2[i] = element;
+        element = 0;
+    }
+    document.write(array2);
+</script>
+</body>
+</html>

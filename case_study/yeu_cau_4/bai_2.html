@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    let str = "abcddcaade";
+    let array = str.split("");
+    let result = [];
+    for (let i = 0; i < array.length; i++) {
+        if(!result.includes(array[i],0))
+        {
+            result.push(array[i]);
+        }
+    }
+    document.write("Có "+ result.length+" kí tự khác nhau");
+</script>
+</body>
+</html>

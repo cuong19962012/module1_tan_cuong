@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let s1 = "abcd";
+    let s2 = "abcdde";
+    s1 = s1.split("");
+    s2 = s2.split("");
+    let count = 0;
+    let count1 = 0;
+    let count2 = 0;
+    let i = 0;
+    do {
+        if (s2.includes(s1[i], 0)) {
+            for (let j = 0; j < s1.length; j++) {
+                if (s1[j] === s1[i]) {
+                    count1++;
+                }
+            }
+            for (let k = 0; k < s2.length; k++) {
+                if (s2[k] === s1[i]) {
+                    count2++;
+                }
+            }
+            for (let l = 0; l < s2.length;) {
+                if (s2[l] === s1[i]) {
+                    s2.splice(l, 1);
+                } else {
+                    l++;
+                }
+            }
+            if (count1 < count2) {
+                count += count1;
+            } else {
+                count += count2;
+            }
+            count1 = 0;
+            count2 = 0;
+        } else {
+            i++;
+        }
+    } while (s2.length !== 0 && i < s1.length);
+    document.write(count);
+</script>
+</body>
+</html>

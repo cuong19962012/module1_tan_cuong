@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let salary = +prompt("Nhập lương đơn vị triệu đồng: ", "0");
+    let tax;
+    let takeHomePay;
+    if (salary > 15) {
+        tax = salary * 0.2;
+        takeHomePay = salary - tax;
+    } else if (salary > 7) {
+        tax = salary * 0.1;
+        takeHomePay = salary - tax;
+    } else {
+        tax = salary * 0.05;
+        takeHomePay = salary - tax;
+    }
+    document.write("Thuế thu nhập: "+tax+" Triệu<br>"+"Lương ròng: "+takeHomePay+" Triệu");
+</script>
+</body>
+</html>

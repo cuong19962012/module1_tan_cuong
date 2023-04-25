@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let optionMenu;
+    let total = 0;
+    do {
+        let numberOfCafe;
+        let numberOfOrangeJuice;
+        let numberOfCarrotJuice;
+        let numberOfTomatoJuice;
+        let numberOfWater;
+        let numberOfCoconut;
+        optionMenu = +prompt("1.Cafe\n" +
+            "2.Cam vắt\n" +
+            "3.Nước ép cà rốt\n" +
+            "4.Nước ép cà chua\n" +
+            "5.Nước lọc\n" +
+            "6.Nước dừa\n" +
+            "7.Order xong\n");
+        switch (optionMenu) {
+            case 1:
+                numberOfCafe = +prompt("Cà phê 15K! mời nhập số lượng", "0");
+                alert("Tổng tiền của bill này là " + numberOfCafe * 15 + " K");
+                total += (numberOfCafe * 15);
+                break;
+            case 2:
+                numberOfOrangeJuice = +prompt("Cam vắt 30K! mời nhập số lượng", "0");
+                alert("Tổng tiền của bill này là " + numberOfOrangeJuice * 30 + " K");
+                total += (numberOfOrangeJuice * 30);
+                break;
+            case 3:
+                numberOfCarrotJuice = +prompt("Cà rốt 25K! mời nhập số lượng", "0");
+                alert("Tổng tiền của bill này là " + numberOfCarrotJuice * 25 + " K");
+                total += (numberOfCarrotJuice * 25);
+                break;
+            case 4:
+                numberOfTomatoJuice = +prompt("Cà chua 25K! mời nhập số lượng", "0");
+                alert("Tổng tiền của bill này là " + numberOfTomatoJuice * 25 + " K");
+                total += (numberOfTomatoJuice * 25);
+                break;
+            case 5:
+                numberOfWater = +prompt("Nước 7K! mời nhập số lượng", "0");
+                alert("Tổng tiền của bill này là " + numberOfWater * 7 + " K");
+                total += (numberOfWater * 7);
+                break;
+            case 6:
+                numberOfCoconut = +prompt("Nước dừa 25K! mời nhập số lượng", "0");
+                alert("Tổng tiền của bill này là " + numberOfCoconut * 25 + " K");
+                total += numberOfCoconut * 25;
+                break;
+        }
+    } while (optionMenu !== 7)
+    document.write("Tổng bill là " + total + " K");
+</script>
+</body>
+</html>

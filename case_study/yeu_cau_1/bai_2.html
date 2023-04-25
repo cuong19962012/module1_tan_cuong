@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let word;
+    do {
+        word = prompt("Nhập 1 ký tự chữ");
+    } while (word.length > 1 || word.toUpperCase() == word.toLowerCase());
+    switch (word) {
+        case "o":
+        case "O":
+        case "u":
+        case "U":
+        case "i":
+        case "I":
+        case "a":
+        case "A":
+        case "e":
+        case "E":
+            alert("Kí tự nguyên âm ");
+            break;
+        default:
+            alert("Kí tự phụ âm");
+    }
+</script>
+</body>
+</html>

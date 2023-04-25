@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let numbers = [[5, 12, 17, 9, 3, 2], [13, 4, 8, 14, 1, 2], [9, 6, 3, 7, 21, 2]];
+    let max = numbers[0][0];
+    let min = numbers[0][0];
+    for (let i = 0; i < 3; i++) {
+        for (let j = 0; j < 6; j++) {
+            if (max < numbers[i][j]) {
+                max = numbers[i][j];
+            }
+            if (min > numbers[i][j]) {
+                min = numbers[i][j];
+            }
+        }
+    }
+    document.write("Max: "+max+"<br>Min "+min);
+</script>
+</body>
+</html>

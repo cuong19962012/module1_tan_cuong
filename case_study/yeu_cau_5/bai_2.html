@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let numbers = [[5, 12, 17, 9, 3, 2], [13, 4, 8, 14, 1, 2], [9, 6, 3, 7, 21, 2]];
+    let flag = true;
+    let count = 0;
+    for (let i = 0; i < 3; i++) {
+        for (let j = 0; j < 6; j++) {
+            for (let k = 2; k < (numbers[i][j] / 2) + 1; k++) {
+
+                if (numbers[i][j] % k === 0 && numbers[i][j] !== 2) {
+                    flag = false;
+                    break;
+                }
+                if (numbers[i][j] < 2) {
+                    flag = false;
+                    break;
+                }
+            }
+            if (flag === true) {
+                document.write(numbers[i][j] + "<br>");
+                count++;
+            }
+            flag = true;
+        }
+    }
+    document.write("Tổng số nguyên tố " + count);
+
+</script>
+</body>
+</html>

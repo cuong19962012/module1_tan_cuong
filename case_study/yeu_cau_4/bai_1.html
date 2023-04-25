@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let str = "tRUong        phaM      TaN   HAI";
+    let array1 = str.split(" ");
+    let array2 = [];
+
+    for (let i = 0; i < array1.length; i++) {
+        if (array1[i].toLowerCase() !== array1[i].toUpperCase()) {
+            array1[i] = array1[i].toLowerCase();
+            array2.push(array1[i]);
+        }
+    }
+    let str1 = array2.join(" ");
+    let result = str1[0].toUpperCase();
+    let j = 1;
+    while (j < str1.length) {
+        if (str1[j] === " ") {
+            result = result + " " + str1[j + 1].toUpperCase();
+            j = j + 2;
+        } else {
+            result += str1[j]
+            j++;
+        }
+    }
+    let longestWord = array2[0];
+    for (let k = 0; k < array2.length; k++) {
+        if (longestWord.length < array2[k].length) {
+            longestWord = array2[k];
+        }
+    }
+    document.write("Kết quả : " + result);
+    document.write("<br>Kí tự dài nhất: " + longestWord);
+</script>
+</body>
+</html>
