@@ -3,14 +3,200 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+
+        tr td {
+            border: 1px solid black;
+        }
+    </style>
 </head>
 <body>
+<label for="id">ID </label><input type="number" id="id"><br><br>
+<label for="name">NAME </label><input type="text" id="name"><br><br>
+<label for="classname">CLASS </label><input type="text" id="classname"><br><br>
+<label for="email">EMAIL </label><input type="email" id="email"><br><br>
+<label for="birthday">BIRTHDAY </label><input type="date" id="birthday"><br><br>
+<label for="module">MODULE </label><input type="number" id="module"><br><br>
+<button id="add-btn" onclick="addStudent()">Thêm mới học viên</button>
+<button id="edit-btn" onclick="editStudent(document.getElementById('id').value)">sửa thông tin học viên</button>
+<button id="confirm-btn" style="display: none" onclick="confirm()">xác nhận thông tin học viên</button>
+<button id="delete-btn" onclick="deleteStudent(document.getElementById('id').value)">xóa học viên</button>
+<p id="index"></p>
 <script>
-    class Student{
-        constructor(studentId,name,className,email,birthday,module) {
+    class Student {
+        constructor(studentId, name, className, email, birthday, module) {
+            this.studentId = studentId;
+            this.name = name;
+            this.className = className;
+            this.email = email;
+            this.birthday = birthday;
+            this.module = module;
+        }
 
+        setStudentId(id) {
+            this.studentId = id;
+        }
+
+        getStudentId() {
+            return this.studentId;
+        }
+
+        setName(name) {
+            this.name = name;
+        }
+
+        getName() {
+            return this.name;
+        }
+
+        setClassName(className) {
+            this.className = className;
+        }
+
+        getClassName() {
+            return this.className;
+        }
+
+        setEmail(email) {
+            this.email = email;
+        }
+
+        getEmail() {
+            return this.email;
+        }
+
+        setBirthday(birthday) {
+            this.birthday = birthday;
+        }
+
+        getBirthday() {
+            return this.birthday;
+        }
+
+        setModule(module) {
+            this.module = module;
+        }
+
+        getModule() {
+            return this.module;
+        }
+
+    }
+
+    let data = [];
+    let index;
+    let student1 = new Student("01", "Nguyễn Văn A", "C0323G1", "Nguyenvana@gmail.com", "23/07/2000", "1");
+    let student2 = new Student("02", "Nguyễn Văn B", "C0323G1", "Nguyenvanb@gmail.com", "21/09/2002", "1");
+    data.push(student1);
+    data.push(student2);
+
+    function addStudent() {
+        if (document.getElementById('id').value !== "" &&
+            document.getElementById('name').value !== "" &&
+            document.getElementById('classname').value !== "" &&
+            document.getElementById('email').value !== "" &&
+            document.getElementById('birthday').value !== "" &&
+            document.getElementById('module').value !== "") {
+            let flag = true;
+            for (let k = 0; k < data.length; k++) {
+                if (data[k].getStudentId() !== document.getElementById('id').value) {
+                    flag = true;
+                } else {
+                    flag = false;
+                    break;
+                }
+            }
+            if (flag === false) {
+                alert("Mã học viên đã bị trùng lặp");
+            } else {
+                let studentId = document.getElementById('id').value;
+                let name = document.getElementById('name').value;
+                let className = document.getElementById('classname').value;
+                let email = document.getElementById('email').value;
+                let birthday = document.getElementById('birthday').value;
+                let module = document.getElementById('module').value;
+                let student = new Student(studentId, name, className, email, birthday, module);
+                data.push(student);
+            }
+        } else {
+            alert("Không được để thông tin trống");
+        }
+        view();
+    }
+
+    function deleteStudent(id) {
+        let flag = false;
+        for (let i = 0; i < data.length; i++) {
+            if (data[i].getStudentId() === id) {
+                data.splice(i, 1);
+                flag = true;
+            } else {
+                flag = false;
+            }
+        }
+        if (flag === false) {
+            alert("Mã học viên không tồn tại");
+        }
+        view();
+    }
+
+    function editStudent(id) {
+        let flag = true;
+        for (let j = 0; j < data.length; j++) {
+            if (data[j].getStudentId() === id) {
+                document.getElementById("name").value = data[j].getName();
+                document.getElementById("classname").value = data[j].getClassName();
+                document.getElementById("email").value = data[j].getEmail();
+                document.getElementById("birthday").value = data[j].getBirthday();
+                document.getElementById("module").value = data[j].getModule();
+                document.getElementById("edit-btn").style.display = "none";
+                document.getElementById("confirm-btn").style.display = "inline";
+                index = j;
+                flag = true;
+                break;
+            } else {
+                flag = false;
+            }
+        }
+        if (flag === false) {
+            alert("Mã học viên không tồn tại");
         }
     }
+
+    function confirm() {
+        data[index].setStudentId(document.getElementById('id').value);
+        data[index].setName(document.getElementById('name').value);
+        data[index].setClassName(document.getElementById('classname').value);
+        data[index].setEmail(document.getElementById('email').value);
+        data[index].setBirthday(document.getElementById('birthday').value);
+        data[index].setModule(document.getElementById('module').value);
+        document.getElementById("edit-btn").style.display = "inline";
+        document.getElementById("confirm-btn").style.display = "none";
+        view();
+    }
+
+    function view() {
+        let result = ""
+        result += "<table>";
+        result += "<tr> <th> ID </th><th> NAME </th><th> CLASS </th><th> EMAIL </th><th> BIRTHDAY </th><th> MODULE </th></tr>";
+        for (let i = 0; i < data.length; i++) {
+            result += "<tr>";
+            result += "<td>" + data[i].getStudentId() + "</td>";
+            result += "<td>" + data[i].getName() + "</td>";
+            result += "<td>" + data[i].getClassName() + "</td>";
+            result += "<td>" + data[i].getEmail() + "</td>";
+            result += "<td>" + data[i].getBirthday() + "</td>";
+            result += "<td>" + data[i].getModule() + "</td>";
+            result += "</tr>";
+        }
+        result += "</table>";
+        document.getElementById("index").innerHTML = result;
+    }
+
+    window.onload(view());
 </script>
 </body>
 </html>
